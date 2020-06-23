@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/page1"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_forum_24"
+        android:title="@string/bottomnavigationview_menulist_messages" />
+    <item
+        android:id="@+id/page2"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_favorite_24"
+        android:title="@string/navigationview_menulist_kiss" />
+    <item
+        android:id="@+id/page3"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_emoji_emotions_24"
+        android:title="@string/navigationview_menulist_fun" />
+
+</menu>
