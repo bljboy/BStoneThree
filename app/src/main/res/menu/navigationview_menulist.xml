@@ -1,16 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <group android:id="@+id/group1">
 
-    <item
-        android:id="@+id/page1"
-        android:enabled="true"
-        android:icon="@drawable/ic_baseline_forum_24"
-        android:title="@string/navigationview_menulist_myself" />
-    <item
-        android:id="@+id/page2"
-        android:enabled="true"
-        android:icon="@drawable/ic_baseline_forum_24"
-        android:title="@string/navigationview_menulist_myself2" />
+        <item
+            android:id="@+id/page1"
+            android:enabled="true"
+            android:icon="@drawable/ic_baseline_person_24"
+            android:title="@string/navigationview_menulist_myself" />
+        <item
+            android:id="@+id/page2"
+            android:enabled="true"
+            android:icon="@drawable/ic_baseline_bookmark_24"
+            android:title="@string/nav_view_menusweet" />
+        <item
+            android:id="@+id/nav_view_theme"
+            android:enabled="true"
+            android:icon="@drawable/ic_baseline_more_horiz_24"
+            android:title="@string/nav_view_menu_theme" />
+        <item
+            android:id="@+id/page4"
+            android:enabled="true"
+            android:icon="@drawable/ic_baseline_settings_24"
+            android:title="@string/nav_view_menu_settig" />
+
+    </group>
+
+
+    <group>
+        <item
+            android:id="@+id/setting"
+            android:icon="@drawable/ic_baseline_label_important_24"
+            android:title="@string/nav_view_menu_about" />
+        <item
+            android:id="@+id/nav_view_switch_bar"
+            android:icon="@drawable/ic_baseline_brightness_2_24"
+            android:title="@string/navigationview_menulist_darktheme"
+            app:showAsAction="collapseActionView" />
+    </group>
+
 
 </menu>

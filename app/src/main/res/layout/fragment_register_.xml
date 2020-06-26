@@ -7,7 +7,7 @@
     tools:context=".Register_Fragment">
 
     <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appBarLayout"
+        android:id="@+id/register_appbarlayout"
         android:layout_width="match_parent"
 
         android:layout_height="175dp"
@@ -19,10 +19,11 @@
         tools:ignore="MissingConstraints">
 
         <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/login_toolbar_title"
+            android:id="@+id/register_toolbar_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
+            app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
             app:title="@string/app_name"
             app:titleTextColor="@color/login_toolbar" />
 
@@ -51,18 +52,19 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/register_userinput"
+        android:id="@+id/register_userinputlayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+        app:layout_constraintTop_toBottomOf="@+id/register_appbarlayout"
         app:layout_constraintVertical_bias="0.060000002"
         tools:ignore="MissingConstraints">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/register_userinput"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:hint="@string/register_userinput"
@@ -73,18 +75,19 @@
 
     <com.google.android.material.textfield.TextInputLayout
 
-        android:id="@+id/register_iphoneinput"
+        android:id="@+id/register_iphoneinputlayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/register_userinput"
+        app:layout_constraintTop_toBottomOf="@+id/register_userinputlayout"
         app:layout_constraintVertical_bias="0.075"
         tools:ignore="MissingConstraints">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/register_iphoneinput"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:hint="@string/register_iphoneinput"
@@ -92,8 +95,22 @@
             android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
+    <Button
+        android:id="@+id/register_CAP"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/CAP"
+        android:textColor="@color/CAP"
+        app:layout_constraintBottom_toBottomOf="@+id/register_iphoneinputlayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/register_iphoneinputlayout"
+        app:layout_constraintTop_toTopOf="@+id/register_iphoneinputlayout"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="MissingConstraints" />
 
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/register_cap_layout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="250dp"
@@ -101,7 +118,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/register_iphoneinput"
+        app:layout_constraintTop_toBottomOf="@+id/register_iphoneinputlayout"
         app:layout_constraintVertical_bias="0.075"
         tools:ignore="MissingConstraints">
 
@@ -115,8 +132,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-
-        android:id="@+id/register_passwordinput"
+        android:id="@+id/register_passwordinputlayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
@@ -128,6 +144,7 @@
         tools:ignore="MissingConstraints">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/register_passwordinput"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:drawableEnd="@drawable/ic_baseline_lock_24"
@@ -138,19 +155,21 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/register_passwordinputagain_layout"
 
-        android:id="@+id/register_passwordinputagain"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/register_passwordinput"
+        app:layout_constraintTop_toBottomOf="@+id/register_passwordinputlayout"
         app:layout_constraintVertical_bias="0.075"
         tools:ignore="MissingConstraints">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/register_passwordinputagain"
+
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:drawableEnd="@drawable/ic_baseline_lock_24"
@@ -162,15 +181,15 @@
 
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/register_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/login_loginbutton"
+        android:text="@string/register_registerbutton"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/register_passwordinputagain"
+        app:layout_constraintEnd_toEndOf="@+id/register_passwordinputagain_layout"
         app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="@+id/register_passwordinputagain"
-        app:layout_constraintTop_toBottomOf="@+id/register_passwordinputagain"
+        app:layout_constraintStart_toStartOf="@+id/register_passwordinputagain_layout"
+        app:layout_constraintTop_toBottomOf="@+id/register_passwordinputagain_layout"
         app:layout_constraintVertical_bias="0.31" />
 
 

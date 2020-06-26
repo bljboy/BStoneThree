@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BStone</string>
+    <string name="login_title">Login</string>
+    <string name="login_userinput">account</string>
+    <string name="login_passwordinput">password</string>
+    <string name="login_loginbutton">Login</string>
+    <string name="login_registbutton">Register</string>
+    <string name="register">Register</string>
+    <string name="register_title">Register</string>
+    <string name="register_userinput">account</string>
+    <string name="register_passwordinput">password</string>
+    <string name="register_passwordinputagain">pssword again</string>
+    <string name="register_iphoneinput">iphone number</string>
+    <string name="menu_title_one">community</string>
+    <string name="menu_title_two">sweet</string>
+    <string name="menu_title_three">fun</string>
+    <string name="register_capinput">cap</string>
+    <string name="navigationview_menulist_myself">Personal</string>
+    <string name="navigationview_menulist_myself2">Personal</string>
+    <string name="bottomnavigationview_menulist_messages">community</string>
+    <string name="navigationview_menulist_kiss">sweet</string>
+    <string name="navigationview_menulist_fun">fun</string>
+    <string name="CAP">Get code</string>
+    <string name="other">Other ways</string>
+    <string name="iphonelogin">Phone login</string>
+    <string name="navigationview_menulist_darktheme">Dark Mode</string>
+    <string name="home_recyelerviwe_cardview">So this is an ideal app, this is a new component CardView!</string>
+    <string name="register_registerbutton">Register</string>
+    <string name="home_button_good">yes</string>
+    <string name="home_car_time">2020/6/24</string>
+    <string name="nav_view_menusweet">My secret</string>
+    <string name="nav_view_menu_theme">Theme</string>
+    <string name="nav_view_menu_settig">Setting</string>
+    <string name="nav_view_menu_about">About</string>
+    <string name="th_text_red">Red</string>
+    <string name="th_text_blue">Blue</string>
+    <string name="th_text_yellow">Yellow</string>
+    <string name="th_text_green">Green</string>
+    <string name="th_text_purple">Purple</string>
+    <string name="th_text_grey">Grey</string>
+    <string name="th_bar_title">Theme</string>
+</resources>

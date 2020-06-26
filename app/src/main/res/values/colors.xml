@@ -1,13 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#FFEb3B</color>
-    <color name="colorPrimaryDark">#FFEb3B</color>
-    <color name="colorAccent">#FFEb3B</color>
-    <color name="login_text_color">#000000</color>
-    <color name="login_background_color">#FFEb3B</color>
-    <color name="login_registerbuttoncolor">#000000</color>
-    <color name="home_FABcolor">#FFEb3B</color>
+    <color name="colorPrimary">#607DBB</color>
+    <color name="colorPrimaryDark">#607DBB</color>
+    <color name="colorAccent">#607DBB</color>
+    <color name="login_background_color">#FAFAFA</color>
+
+
+    //不动
+    <color name="home_bar_color">#FAFAFA</color>
+    <color name="FAB_icon_color">#FAFAFA</color>
+    <color name="CAP">#424242</color>
+    <color name="login_registerbuttoncolor">#424242</color>
+    <color name="login_text_color">#424242</color>
     <color name="home_color">#E0E0E0</color>
-    <color name="home_bottomnavigaton">#ffffff</color>
-    <color name="login_toolbar">#FFFFFF</color>
+    <color name="home_bottomnavigaton">#FAFAFA</color>
+    <color name="login_toolbar">#FAFAFA</color>
+    <color name="recyclerview">#FAFAFA</color>
+    <color name="login_iphone_button">#424242</color>
+    <color name="home_recyclerview_text_color">#424242</color>
+    <color name="nav_view_itemcolor">#546E7A</color>
+    <color name="nav_view_itemtextcolor">#424242</color>
+    <color name="nav_view_theme_bartitlecolor">#FAFAFA</color>
+
+    //红色
+    <color name="colorPrimary_theme_red">#F44336</color>
+    <color name="colorPrimaryDark_theme_red">#EF9A9A</color>
+    <color name="colorAccent_theme_red">#EF9A9A</color>
+    <color name="FAB_theme_color_red">#F44336</color>
+
+    //蓝色
+    <color name="colorPrimary_theme_blue">#2196F3</color>
+    <color name="colorPrimaryDark_theme_blue">#90CAF9</color>
+    <color name="colorAccent_theme_blue">#90CAF9</color>
+    <color name="FAB_theme_color_blue">#2196F3</color>
+
+    //黄色
+    <color name="colorPrimary_theme_yellow">#FFEB3B</color>
+    <color name="colorPrimaryDark_theme_yellow">#FFF590</color>
+    <color name="colorAccent_theme_yellow">#FFF590</color>
+    <color name="FAB_theme_color_yellow">#FFEB3B</color>
+
+    //绿色
+    <color name="colorPrimary_theme_green">#4CAF50</color>
+    <color name="colorPrimaryDark_theme_green">#A5D6A7</color>
+    <color name="colorAccent_theme_green">#A5D6A7</color>
+    <color name="FAB_theme_color_green">#4CAF50</color>
+
+    //灰色
+    <color name="colorPrimary_theme_grey">#9E9E9E</color>
+    <color name="colorPrimaryDark_theme_grey">#BDBDBD</color>
+    <color name="colorAccent_theme_grey">#BDBDBD</color>
+    <color name="FAB_theme_color_grey">#9E9E9E</color>
+
+    //紫色
+    <color name="colorPrimary_theme_purple">#9C27B0</color>
+    <color name="colorPrimaryDark_theme_purple">#CE93D8</color>
+    <color name="colorAccent_theme_purple">#CE93D8</color>
+    <color name="FAB_theme_color_purple">#9C27B0</color>
+
+    //黑夜
+    <color name="colorPrimary_theme_dark">#263238</color>
+    <color name="colorPrimaryDark_theme_dark">#263238</color>
+    <color name="colorAccent_theme_dark">#263238</color>
+    <color name="FAB_theme_color_dark">#37474F</color>
+
+    <color name="home_MaterialCardView_car_big_title">#FAFAFA</color>
+    <color name="home_MaterialCardView_car_time">#FAFAFA</color>
+    <color name="home_MaterialCardView">#37474F</color>
+    <color name="home_MaterialCardView_car_text">#FAFAFA</color>
+    <color name="home_MaterialCardView_b1">#FAFAFA</color>
+    <color name="windowBackground">#37474F</color>
+
+
 </resources>
+
+

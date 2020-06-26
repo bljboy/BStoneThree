@@ -1,4 +1,4 @@
-package com.boy_stone.bstonethree.fragment
+package com.boy_stone.bstonethree.bottom_nav_fragment
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager

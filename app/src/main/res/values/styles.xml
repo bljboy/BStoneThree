@@ -1,13 +1,75 @@
 <resources>
-    <!-- Base application theme. -->
+
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-    <!-- 设置Toolbar标题字体的大小 -->
-    <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
-        <item name="android:textSize">50sp</item>
+
+    <style name="AppTheme_Red_1" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary_theme_red</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark_theme_red</item>
+        <item name="colorAccent">@color/colorAccent_theme_red</item>
+        <item name="colorSecondary">@color/colorPrimary_theme_red</item>
     </style>
+
+    <style name="AppTheme_blue_2" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary_theme_blue</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark_theme_blue</item>
+        <item name="colorAccent">@color/colorAccent_theme_blue</item>
+        <item name="colorSecondary">@color/FAB_theme_color_blue</item>
+
+    </style>
+
+    <style name="AppTheme_yellow_3" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary_theme_yellow</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark_theme_yellow</item>
+        <item name="colorAccent">@color/colorAccent_theme_yellow</item>
+        <item name="colorSecondary">@color/FAB_theme_color_yellow</item>
+
+    </style>
+
+    <style name="AppTheme_green_4" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary_theme_green</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark_theme_green</item>
+        <item name="colorAccent">@color/colorAccent_theme_green</item>
+        <item name="colorSecondary">@color/FAB_theme_color_green</item>
+    </style>
+
+    <style name="AppTheme_grey_5" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary_theme_grey</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark_theme_grey</item>
+        <item name="colorAccent">@color/colorAccent_theme_grey</item>
+        <item name="colorSecondary">@color/FAB_theme_color_grey</item>
+    </style>
+
+    <style name="AppTheme_purple_6" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary_theme_purple</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark_theme_purple</item>
+        <item name="colorAccent">@color/colorAccent_theme_purple</item>
+        <item name="colorSecondary">@color/FAB_theme_color_purple</item>
+    </style>
+
+    <style name="AppTheme_dark_7" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary_theme_dark</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark_theme_dark</item>
+        <item name="colorAccent">@color/colorAccent_theme_dark</item>
+        <item name="colorSecondary">@color/FAB_theme_color_dark</item>
+<!--        <item name="home_MaterialCardView_car_big_title">@color/home_MaterialCardView_car_big_title</item>-->
+<!--        <item name="home_MaterialCardView">@color/home_MaterialCardView</item>-->
+<!--        <item name="home_MaterialCardView_car_text">@color/home_MaterialCardView_car_text</item>-->
+<!--        <item name="home_MaterialCardView_car_time">@color/home_MaterialCardView_car_time</item>-->
+<!--        <item name="home_MaterialCardView_b1">@color/home_MaterialCardView_b1</item>-->
+        <item name="android:windowBackground">@color/FAB_theme_color_dark</item>
+    </style>
+
+
 </resources>
