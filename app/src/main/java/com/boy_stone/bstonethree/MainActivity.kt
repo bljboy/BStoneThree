@@ -1,15 +1,15 @@
 package com.boy_stone.bstonethree
 
+import android.R.id
 import android.annotation.SuppressLint
+import android.app.Activity
+import android.content.Context
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
-import android.os.Handler
 import android.util.Log
 import android.view.Gravity
-import android.view.Menu
 import android.view.View
-import android.widget.CompoundButton
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -19,16 +19,17 @@ import com.boy_stone.bstonethree.bottom_nav_fragment.Fragment_fun
 import com.boy_stone.bstonethree.bottom_nav_fragment.Fragment_messages
 import com.boy_stone.bstonethree.bottom_nav_fragment.Fragment_sweet
 import com.boy_stone.bstonethree.nav_view_fragment.NavVIew_Theme
+import com.boy_stone.bstonethree.nav_view_fragment.NavView_Person
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.switch_item.*
+import kotlinx.android.synthetic.main.navigationview_head.view.*
 import org.jetbrains.anko.toast
+
 
 class MainActivity : AppCompatActivity() {
 
     private var list: ArrayList<Fragment> = ArrayList()
     private var fragmentAdapter: FragmentAdapter? = null
     private var themeType = 0
-
     @SuppressLint("WrongConstant", "ApplySharedPref")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,17 +54,34 @@ class MainActivity : AppCompatActivity() {
         }
         setContentView(R.layout.activity_main)
 
+        val w =
+            getSharedPreferences("login_user", Context.MODE_PRIVATE).getString("user", "")
+        if (!w.equals("")){
+            val headerView: View = home_navigationview.getHeaderView(0)
+            headerView.nav_view_head_user.text = w
+}
 
-        navigationview.setNavigationItemSelectedListener {
+
+        //navigationview的item监听事件
+        home_navigationview.setNavigationItemSelectedListener {
             when (it.itemId) {
+                //侧边菜单栏-个人信息
+                R.id.nav_view_person -> {
+                    val intent = Intent()
+                    intent.setClass(applicationContext, NavView_Person::class.java)
+                    startActivity(intent)
+                    true
+                }
+
+                //侧边菜单栏-主题
                 R.id.nav_view_theme -> {
                     val intent = Intent()
                     intent.setClass(applicationContext, NavVIew_Theme().javaClass)
                     startActivity(intent)
                     true
                 }
+                //侧边菜单栏-黑夜模式
                 R.id.nav_view_switch_bar -> {
-                    toast("sssssssssssssssssssss")
                     if (themeType == 0 || themeType == 2 || themeType == 1 || themeType == 4 || themeType == 5 || themeType == 3 || themeType == 6) {
                         themeType = 7
 
@@ -76,22 +94,29 @@ class MainActivity : AppCompatActivity() {
                     recreate();
                     true
                 }
-
                 else -> {
                     true
                 }
             }
         }
+
+        FAB.setOnClickListener(View.OnClickListener {
+            Toast.makeText(this, "s", Toast.LENGTH_SHORT).show()
+        })
+
+
+        //顶部应用栏按钮点击打开侧边菜单
+        home_bar.setNavigationOnClickListener(View.OnClickListener {
+            dd.openDrawer(Gravity.START)
+        })
+
+        //加载recyclerview
         list.add(Fragment_messages())
         list.add(Fragment_sweet())
         list.add(Fragment_fun())
         fragmentAdapter = FragmentAdapter(getSupportFragmentManager(), list)
         viewpager.setAdapter(fragmentAdapter)
         viewpager.setCurrentItem(0)
-        FAB.setOnClickListener(View.OnClickListener {
-            Toast.makeText(this, "ss", Toast.LENGTH_SHORT).show()
-        })
-
         viewpager.setOnPageChangeListener(object : ViewPager.OnPageChangeListener {
             override fun onPageSelected(position: Int) {
                 bottomNavigationView.getMenu().getItem(position).setChecked(true);
@@ -103,12 +128,7 @@ class MainActivity : AppCompatActivity() {
             override fun onPageScrollStateChanged(arg0: Int) {
             }
         })
-
-
-        home_bar.setNavigationOnClickListener(View.OnClickListener {
-            dd.openDrawer(Gravity.START)
-        })
-
+        //底部导航栏切换
         bottomNavigationView.setOnNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.page1 -> {
@@ -128,7 +148,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
 
     override fun onRestart() {
         super.onRestart()

@@ -5,7 +5,7 @@
     <group android:id="@+id/group1">
 
         <item
-            android:id="@+id/page1"
+            android:id="@+id/nav_view_person"
             android:enabled="true"
             android:icon="@drawable/ic_baseline_person_24"
             android:title="@string/navigationview_menulist_myself" />

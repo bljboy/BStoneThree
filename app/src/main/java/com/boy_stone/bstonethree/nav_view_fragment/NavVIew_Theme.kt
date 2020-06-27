@@ -37,6 +37,10 @@ class NavVIew_Theme : AppCompatActivity() {
         }
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_nav_v_iew__theme)
+
+
+
+        //返回
         theme_view_title.setOnClickListener(View.OnClickListener {
             finish()
         })

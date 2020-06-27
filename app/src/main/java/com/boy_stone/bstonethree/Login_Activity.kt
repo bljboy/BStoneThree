@@ -22,5 +22,4 @@ class Login_Activity : AppCompatActivity() {
         setContentView(R.layout.activity_login_)
 
     }
-
 }

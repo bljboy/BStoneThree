@@ -70,6 +70,7 @@
     <color name="home_MaterialCardView_car_text">#FAFAFA</color>
     <color name="home_MaterialCardView_b1">#FAFAFA</color>
     <color name="windowBackground">#37474F</color>
+    <color name="person_topbar_text_color">#FAFAFA</color>
 
 
 </resources>

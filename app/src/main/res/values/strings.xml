@@ -45,4 +45,6 @@
     <string name="th_text_purple">紫色</string>
     <string name="th_text_grey">灰色</string>
     <string name="th_bar_title">主题</string>
+    <string name="person_topbar_text">个人信息</string>
+    <string name="fun_ip_text">IP查询</string>
 </resources>
