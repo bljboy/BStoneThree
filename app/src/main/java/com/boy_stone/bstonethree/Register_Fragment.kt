@@ -1,15 +1,16 @@
 package com.boy_stone.bstonethree
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
+import android.os.Message
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
-import androidx.navigation.ui.NavigationUI
 import kotlinx.android.synthetic.main.fragment_register_.*
 import org.jetbrains.anko.support.v4.toast
 import java.io.BufferedReader
@@ -21,7 +22,38 @@ import java.net.URLEncoder
 
 class Register_Fragment : Fragment() {
     var result: String = ""
-    var handler: Handler? = null
+
+    @SuppressLint("HandlerLeak")
+    private var handler: Handler = object : Handler() {
+        override fun handleMessage(msg: Message) {
+            Log.d("result", result)
+            when (true) {
+                msg.what == 1 -> {
+                    if ("ok" == result) { //如果服务器返回值为“ok”，证明用户名、密码输入正确
+                        //跳转登录后界面
+                        toast("注册成功")
+                        requireActivity().finish()
+                        val intent = Intent()
+                        intent.setClass(requireContext(),Login_Activity().javaClass)
+                        startActivity(intent);
+                    } else {
+                        toast("账号或电话号码已被注册")
+                    }
+                }
+                msg.what == 2 -> {
+                    toast("服务器异常")
+                }
+                msg.what == 3 -> {
+                    toast("请检查网络问题")
+                }
+                else -> {
+                }
+            }
+            super.handleMessage(msg)
+            result = ""
+        }
+    }.also { handler = it }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -39,71 +71,84 @@ class Register_Fragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         register_toolbar_title.setOnClickListener(View.OnClickListener {
-            toast("ssssss")
             val controller = Navigation.findNavController(requireActivity(), R.id.login_fragment)
             controller.navigateUp()
-
         })
-//        register_button.setOnClickListener(View.OnClickListener {
-//            if (TextUtils.isEmpty(register_userinput.text.toString()) && TextUtils.isEmpty(
-//                    register_iphoneinput.text.toString()
-//                ) && TextUtils.isEmpty(register_passwordinput.text.toString()) && TextUtils.isEmpty(
-//                    register_passwordinputagain.text.toString()
-//                )
-//            ) {
-//                toast("空")
-//            } else {
-//                handler = object : Handler() {
-//                    override fun handleMessage(msg: Message) {
-//                        super.handleMessage(msg)
-//                        if ("ok".equals(result)) {
-//                            requireActivity().finish()
-//                        }
-//                    }
-//
-//                }
-//                thread {
-//                    send()
-//                    val obtainMessage = (handler as Handler).obtainMessage()
-//                    (handler as Handler).sendMessage(obtainMessage)
-//                }.start()
-//
-//            }
-//        })
+        register_button.setOnClickListener(View.OnClickListener {
+            when(true) {
+                register_userinput.text.toString().equals("") -> {
+                    toast("请输入用户名")
+                }
+                register_iphoneinput.text.toString().equals("") -> {
+                    toast("请输入电话号码")
+                }
+                register_capinput.text.toString().equals("") -> {
+                    toast("请输入验证码")
+                }
+                register_passwordinput.text.toString().equals("") -> {
+                    toast("请输入密码")
+                }
+                !register_passwordinputagain.text.toString()
+                    .equals(register_passwordinput.text.toString()) -> {
+                    toast("两次密码不一致")
+                }
+                else -> {
+                    Thread(Runnable
+                    // 创建一个新线程，用于从网络上获取文件
+                    {
+                        send() //调用send()方法，用于发送用户名、密码到Web服务器
+                        val m = handler.obtainMessage() // 获取一个Message
+                        handler.sendMessage(m) // 发送消息
+                    }).start()
+
+                }
+            }
+        })
 
     }
 
     fun send() {
-        val url: URL = URL("http://localhost:8080/BStone_war_exploded/register.jsp")
-        val connection = url.openConnection() as HttpURLConnection
-        connection.requestMethod = "POST"
-        connection.doInput = true
-        connection.doInput = true
-        connection.useCaches = false
-        connection.instanceFollowRedirects = true
-        connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded")
-        val out = DataOutputStream(connection.outputStream)
-        val param = "user=" + URLEncoder.encode(register_userinput.text.toString(), "UTF-8")
-        "&iphone_number=" + URLEncoder.encode(register_iphoneinput.text.toString(), "UTF-8")
-        "password=" + URLEncoder.encode(
-            register_passwordinput.text.toString(),
-            "UTF-8"
-        )
-        out.writeBytes(param)
-        out.flush()
-        out.close()
-        if (connection.responseCode == HttpURLConnection.HTTP_OK) {
-            val inputStreamReader = InputStreamReader(connection.inputStream)
-            val buffer = BufferedReader(inputStreamReader)
-            var inputline: String? = null
-
-            do {
-                inputline = buffer.readLine()
-                if (inputline != null) {
-                    result += inputline
+        try {
+            val url: URL = URL("http://192.168.31.147:8080/BStone_war_exploded/register.jsp")
+            val connection = url.openConnection() as HttpURLConnection
+            connection.requestMethod = "POST"
+            connection.doInput = true
+            connection.doOutput = true
+            connection.useCaches = false
+            connection.instanceFollowRedirects = true
+            connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded")
+            val out = DataOutputStream(connection.outputStream)
+            val param = ("user="
+                    + URLEncoder.encode(register_userinput.text.toString(), "utf-8")
+                    + "&iphone_number="
+                    + URLEncoder.encode(register_iphoneinput.text.toString(), "utf-8")
+                    + "&password="
+                    + URLEncoder.encode(register_passwordinput.text.toString(), "utf-8")
+            )
+            out.writeBytes(param)
+            out.flush()
+            out.close()
+            if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {  //判断是否响应成功
+                val isn = InputStreamReader(
+                    connection.getInputStream()
+                ) // 获得读取的内容
+                val buffer = BufferedReader(isn) // 获取输入流对象
+                var inputLine: String? = null
+                while (buffer.readLine().also { inputLine = it } != null) {  //通过循环逐行读取输入流中的内容
+                    result += inputLine
                 }
-            } while (true)
+                isn.close() //关闭字符输入流
+                handler.sendEmptyMessage(1)
+
+            } else {
+                Log.d("服务器", "连接失败")
+                handler.sendEmptyMessage(2)
+            }
+            connection.disconnect()
+        } catch (e: Exception) {
+            handler.sendEmptyMessage(3)
         }
+
     }
 
     fun onSupportNavigateUp(): Boolean {

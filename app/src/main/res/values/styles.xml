@@ -5,6 +5,8 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorSecondary">@color/colorAccent</item>
+
     </style>
 
     <style name="AppTheme_Red_1" parent="Theme.MaterialComponents.Light.NoActionBar">
@@ -63,11 +65,11 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark_theme_dark</item>
         <item name="colorAccent">@color/colorAccent_theme_dark</item>
         <item name="colorSecondary">@color/FAB_theme_color_dark</item>
-<!--        <item name="home_MaterialCardView_car_big_title">@color/home_MaterialCardView_car_big_title</item>-->
-<!--        <item name="home_MaterialCardView">@color/home_MaterialCardView</item>-->
-<!--        <item name="home_MaterialCardView_car_text">@color/home_MaterialCardView_car_text</item>-->
-<!--        <item name="home_MaterialCardView_car_time">@color/home_MaterialCardView_car_time</item>-->
-<!--        <item name="home_MaterialCardView_b1">@color/home_MaterialCardView_b1</item>-->
+        <!--        <item name="home_MaterialCardView_car_big_title">@color/home_MaterialCardView_car_big_title</item>-->
+        <!--        <item name="home_MaterialCardView">@color/home_MaterialCardView</item>-->
+        <!--        <item name="home_MaterialCardView_car_text">@color/home_MaterialCardView_car_text</item>-->
+        <!--        <item name="home_MaterialCardView_car_time">@color/home_MaterialCardView_car_time</item>-->
+        <!--        <item name="home_MaterialCardView_b1">@color/home_MaterialCardView_b1</item>-->
         <item name="android:windowBackground">@color/FAB_theme_color_dark</item>
     </style>
 

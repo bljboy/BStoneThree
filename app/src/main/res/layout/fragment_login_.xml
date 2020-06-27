@@ -86,7 +86,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
 
-        android:id="@+id/login_passwordinput"
+        android:id="@+id/login_passwordinput_layout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
@@ -99,6 +99,7 @@
         tools:ignore="MissingConstraints">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/login_passwordinput"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:drawableEnd="@drawable/ic_baseline_lock_24"
@@ -114,10 +115,10 @@
         android:layout_height="wrap_content"
         android:text="@string/login_loginbutton"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/login_passwordinput"
+        app:layout_constraintEnd_toEndOf="@+id/login_passwordinput_layout"
         app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="@+id/login_passwordinput"
-        app:layout_constraintTop_toBottomOf="@+id/login_passwordinput"
+        app:layout_constraintStart_toStartOf="@+id/login_passwordinput_layout"
+        app:layout_constraintTop_toBottomOf="@+id/login_passwordinput_layout"
         app:layout_constraintVertical_bias="0.212" />
 
     <Button

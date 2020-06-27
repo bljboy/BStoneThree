@@ -88,9 +88,9 @@
         android:layout_width="300dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
+        app:headerLayout="@layout/navigationview_head"
         app:itemIconTint="@color/nav_view_itemcolor"
         app:itemTextColor="@color/nav_view_itemtextcolor"
-        app:headerLayout="@layout/navigationview_head"
         app:menu="@menu/navigationview_menulist" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

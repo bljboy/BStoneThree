@@ -130,9 +130,10 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-
     override fun onRestart() {
         super.onRestart()
+        Log.e("ssss", "onRestart")
         recreate()
+        overridePendingTransition(0, 0);
     }
 }
