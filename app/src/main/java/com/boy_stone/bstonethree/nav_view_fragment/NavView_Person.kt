@@ -26,6 +26,7 @@ class NavView_Person() : AppCompatActivity() {
                 )
                 val editor: SharedPreferences.Editor = sharedPreferences!!.edit()
                 editor .clear()
+                editor.remove("user")
                 editor.commit()
                 val aa =
                     getSharedPreferences("login_user", Context.MODE_PRIVATE).getString("user", "")

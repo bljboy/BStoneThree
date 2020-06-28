@@ -14,6 +14,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.Navigation
+import com.mob.commons.a.s
 import kotlinx.android.synthetic.main.fragment_login_.*
 import kotlinx.android.synthetic.main.fragment_login_.view.*
 import kotlinx.android.synthetic.main.fragment_register_.*
@@ -27,7 +28,6 @@ import java.net.URL
 import java.net.URLEncoder
 
 class Login_Fragment : Fragment() {
-    var sharedPreferences: SharedPreferences? = null
     var result = ""
     val handler: Handler = @SuppressLint("HandlerLeak")
     object : Handler() {
@@ -38,6 +38,7 @@ class Login_Fragment : Fragment() {
                     if ("ok" == result) { //如果服务器返回值为“ok”，证明用户名、密码输入正确
                         //跳转登录后界面
 //                        toast("登录成功")
+                        var sharedPreferences: SharedPreferences
                         sharedPreferences = requireActivity().getSharedPreferences(
                             "login_user",
                             AppCompatActivity.MODE_PRIVATE
@@ -83,8 +84,12 @@ class Login_Fragment : Fragment() {
     @SuppressLint("UseRequireInsteadOfGet", "CommitPrefEdits")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        val s = sharedPreferences?.getString("user", "")
-        if (s !=null) {
+        val sharedPreferences = requireActivity().getSharedPreferences(
+            "login_user",
+            AppCompatActivity.MODE_PRIVATE
+        )
+        val s = sharedPreferences.getString("user", "")
+        if (!s.equals("")) {
             requireActivity().finish()
             val intent = Intent()
             intent.setClass(requireContext(), MainActivity().javaClass)
@@ -96,6 +101,7 @@ class Login_Fragment : Fragment() {
             findNavController.navigate(R.id.action_login_Fragment_to_register_Fragment)
         })
         login_loginbutton.setOnClickListener(View.OnClickListener {
+
             when (true) {
                 login_userinput.text.toString().equals("") -> {
                     toast("请输入用户名或手机号码")
