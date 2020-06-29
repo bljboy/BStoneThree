@@ -29,7 +29,7 @@ class Register_Fragment : Fragment() {
             Log.d("result", result)
             when (true) {
                 msg.what == 1 -> {
-                    if ("ok" == result) { //如果服务器返回值为“ok”，证明用户名、密码输入正确
+                    if ("ok".equals(result)) { //如果服务器返回值为“ok”，证明用户名、密码输入正确
                         //跳转登录后界面
                         toast("注册成功")
                         requireActivity().finish()
@@ -109,7 +109,7 @@ class Register_Fragment : Fragment() {
 
     fun send() {
         try {
-            val url: URL = URL("http://192.168.31.147:8080/BStone_war_exploded/register.jsp")
+            val url: URL = URL("http://120.77.249.243/BStone/register.jsp")
             val connection = url.openConnection() as HttpURLConnection
             connection.requestMethod = "POST"
             connection.doInput = true
@@ -119,11 +119,11 @@ class Register_Fragment : Fragment() {
             connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded")
             val out = DataOutputStream(connection.outputStream)
             val param = ("user="
-                    + URLEncoder.encode(register_userinput.text.toString(), "utf-8")
+                    + register_userinput.text.toString()
                     + "&iphone_number="
-                    + URLEncoder.encode(register_iphoneinput.text.toString(), "utf-8")
+                    + register_iphoneinput.text.toString()
                     + "&password="
-                    + URLEncoder.encode(register_passwordinput.text.toString(), "utf-8")
+                    + register_passwordinput.text.toString()
             )
             out.writeBytes(param)
             out.flush()

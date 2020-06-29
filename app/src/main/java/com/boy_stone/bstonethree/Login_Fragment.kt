@@ -125,7 +125,7 @@ class Login_Fragment : Fragment() {
 
     fun send() {
         try {
-            val url: URL = URL("http://192.168.31.147:8080/BStone_war_exploded/login.jsp")
+            val url: URL = URL("http://120.77.249.243/BStone/login.jsp")
             val connection = url.openConnection() as HttpURLConnection
             connection.requestMethod = "POST"
             connection.connectTimeout = 2000
@@ -137,9 +137,9 @@ class Login_Fragment : Fragment() {
             connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded")
             val out = DataOutputStream(connection.outputStream)
             val param = ("user="
-                    + URLEncoder.encode(login_userinput.text.toString(), "utf-8")
+                    + login_userinput.text.toString()
                     + "&password="
-                    + URLEncoder.encode(login_passwordinput.text.toString(), "utf-8")
+                    + login_passwordinput.text.toString()
                     )
             out.writeBytes(param)
             out.flush()
