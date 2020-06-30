@@ -68,6 +68,8 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:hint="@string/register_userinput"
+            android:inputType="textAutoComplete"
+            android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ."
             android:maxLength="20"
             android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -91,7 +93,8 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:hint="@string/register_iphoneinput"
-            android:maxLength="20"
+            android:inputType="number"
+            android:maxLength="11"
             android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -127,7 +130,8 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:hint="@string/register_capinput"
-            android:maxLength="20"
+            android:inputType="number"
+            android:maxLength="6"
             android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -143,12 +147,14 @@
         app:layout_constraintVertical_bias="0.075"
         tools:ignore="MissingConstraints">
 
+
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/register_passwordinput"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:drawableEnd="@drawable/ic_baseline_lock_24"
             android:hint="@string/register_passwordinput"
+            android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ."
             android:inputType="textPassword"
             android:maxLength="20"
             android:maxLines="1" />
@@ -169,7 +175,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/register_passwordinputagain"
-
+            android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ."
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:drawableEnd="@drawable/ic_baseline_lock_24"

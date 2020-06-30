@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity() {
     private var fragmentAdapter: FragmentAdapter? = null
     private var themeType = 0
     @SuppressLint("WrongConstant", "ApplySharedPref")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         themeType =

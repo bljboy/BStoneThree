@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.boy_stone.bstonethree.Login_Activity
+import com.boy_stone.bstonethree.Login_Fragment
 import com.boy_stone.bstonethree.MainActivity
 import com.boy_stone.bstonethree.R
 import kotlinx.android.synthetic.main.activity_nav_view__person.*
@@ -14,6 +15,7 @@ import kotlinx.android.synthetic.main.activity_nav_view__person.*
 
 class NavView_Person() : AppCompatActivity() {
     var sharedPreferences: SharedPreferences? = null
+
     @SuppressLint("ApplySharedPref")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,13 +27,18 @@ class NavView_Person() : AppCompatActivity() {
                     AppCompatActivity.MODE_PRIVATE
                 )
                 val editor: SharedPreferences.Editor = sharedPreferences!!.edit()
-                editor .clear()
+                editor.clear()
                 editor.remove("user")
                 editor.commit()
                 val aa =
                     getSharedPreferences("login_user", Context.MODE_PRIVATE).getString("user", "")
-                Log.d("wwwwwwwwwwww",aa)
-                finish()
+                Log.d("wwwwwwwwwwww", aa)
+                val intent = Intent()
+                intent.setClass(this, Login_Activity::class.java)
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
+                //intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+                //finish()
             }
         )
         //顶部按钮返回上一级

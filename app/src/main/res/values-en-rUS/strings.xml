@@ -40,4 +40,7 @@
     <string name="th_text_purple">Purple</string>
     <string name="th_text_grey">Grey</string>
     <string name="th_bar_title">Theme</string>
+    <string name="person_topbar_text">Person</string>
+    <string name="fun_ip_text">IP Searh</string>
+    <string name="nav_view_person_exit">exit</string>
 </resources>

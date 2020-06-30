@@ -8,6 +8,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/tt3"
@@ -16,8 +17,27 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup">
-        <activity android:name=".dialog.Fun_ip_card"></activity>
-        <activity android:name=".dialog.Fun_Ip_Activity" />
+        <!--不配置将会导致无法调用API-->
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="tencent101879204" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="behind"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <!--不配置将会导致无法调用API-->
+
+
+        <activity android:name=".dialog.Fun_ip_card" />
         <activity android:name=".nav_view_fragment.NavView_Person" />
         <activity android:name=".nav_view_fragment.NavVIew_Theme" />
         <activity android:name=".Login_Activity">
@@ -29,5 +49,6 @@
         </activity>
         <activity android:name=".MainActivity" />
     </application>
+
 
 </manifest>
